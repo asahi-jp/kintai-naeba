@@ -16,11 +16,13 @@ import {
   Progress
 } from '@chakra-ui/react';
 import { BsFillInboxFill } from "react-icons/bs"
+import { AiOutlineForward } from "react-icons/ai";
 import { IconContext } from "react-icons"
 
 export default function Index() {
   const [dataList, setDataList] = useState([])
   const [isProgress, setIsProgress] = useState(true)
+  const [isScroll, setIsScroll] = useState(true)
   const { staff } = useContext(GlobalState)
 
   const getData = async () => {
@@ -33,6 +35,10 @@ export default function Index() {
   useEffect(() => {
     if(staff) getData()
   }, [staff])
+
+  setTimeout(() => {
+    setIsScroll(false)
+  }, 10000)
 
   return (
     <>
@@ -66,6 +72,14 @@ export default function Index() {
                         ))}
                       </Tbody>
                     </Table>
+                    {isScroll && (
+                      <div className="flex items-center">
+                        Scroll
+                        <IconContext.Provider value={{ color: '#ccc', size: '30px' }}>
+                          <AiOutlineForward className="moveRight"/>
+                        </IconContext.Provider>
+                      </div>
+                    )}
                   </TableContainer>
                 ) : (
                   <div className="w-full">
