@@ -33,3 +33,20 @@ a {
     background: black;
   }
 }
+
+.moveRight {
+  animation-name: moveRight;
+  animation-duration: 1.2s;
+  animation-iteration-count:infinite;
+  transform: translateX(0);
+}
+
+@keyframes moveRight {
+  0%{
+    transform: translateX(0);
+  }
+  
+  100%{
+    transform: translateX(50px);
+  }
+}

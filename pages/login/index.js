@@ -94,7 +94,7 @@ export default function Index() {
             <FormLabel htmlFor="id">ID（半角数字）</FormLabel>
             <InputGroup>
               <InputLeftElement pointerEvents='none'>
-                <AiOutlineUser color='gray.300' />
+                <AiOutlineUser/>
               </InputLeftElement>
               <Input 
                 id="id"
