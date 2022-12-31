@@ -15,6 +15,7 @@ import {
   Spinner
 } from '@chakra-ui/react';
 import { AtSignIcon } from "@chakra-ui/icons";
+import { AiOutlineUser } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 
 // モック
@@ -92,10 +93,9 @@ export default function Index() {
           <FormControl isInvalid={errors["id"]}>
             <FormLabel htmlFor="id">ID（半角数字）</FormLabel>
             <InputGroup>
-              <InputLeftElement
-                pointerEvents='none'
-                children={<AtSignIcon color='gray.300' />}
-              />
+              <InputLeftElement pointerEvents='none'>
+                <AiOutlineUser color='gray.300' />
+              </InputLeftElement>
               <Input 
                 id="id"
                 placeholder='IDを入力'
