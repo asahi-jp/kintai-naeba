@@ -15,7 +15,8 @@ import {
   Button,
   Spinner
 } from '@chakra-ui/react';
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
+import { FaUserAlt } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
 // モック
@@ -120,6 +121,9 @@ export default function Index() {
           <FormControl isInvalid={errors["password"]}>
             <FormLabel htmlFor="password">パスワード</FormLabel>
             <InputGroup size='md'>
+              <InputLeftElement pointerEvents='none'>
+                <AiOutlineLock/>
+              </InputLeftElement>
               <Input
                 id="password" 
                 pr='4.5rem'
