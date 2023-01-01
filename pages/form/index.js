@@ -111,7 +111,7 @@ export default function Form() {
         sortedData={sortedData}
         reset={reset}
       ></ModalComponent>
-      <Container pt={10} pb={56}>
+      <Container pt={10} pb={56} px="10">
         <Heading size='md' textAlign="center" pb="10">勤怠入力フォーム</Heading>
         <form onSubmit={onSubmit} className="flex flex-col gap-12">
 
