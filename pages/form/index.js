@@ -140,7 +140,7 @@ export default function Form() {
           <FormControl isInvalid={errors["レッスン"]}>
             <Box display="flex" alignItems="center" gap="2">
               <FormLabel htmlFor="レッスン" fontWeight="bold" color="gray.600" m="0">レッスン</FormLabel>
-              <Tooltip label='該当する方は選択してください' fontSize='md'>
+              <Tooltip label='該当する方は選択してください' aria-label='A tooltip' fontSize='md'>
                 <QuestionOutlineIcon />
               </Tooltip>
             </Box>
