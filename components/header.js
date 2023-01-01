@@ -36,6 +36,7 @@ import {
   ViewIcon, 
   ArrowBackIcon 
 } from '@chakra-ui/icons'
+import { BiLogOut } from "react-icons/bi";
 
 export default function Header() {
   const { staff, setStaff, setToastValue } = useContext(GlobalState)
@@ -67,7 +68,6 @@ export default function Header() {
           <button onClick={handleLogo}>苗場勤怠</button>
         </div>
         <div className='flex items-center gap-5'>
-          
           {/* プロフィール */}
           <Popover mr={2}>
             <PopoverTrigger>
@@ -82,15 +82,23 @@ export default function Header() {
               <PopoverBody>
                 {staff ? (
                   <>
-                    ID： {staff.id}
-                    <br />
-                    名前： {staff.name}
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th>自分のID：</th>
+                          <td>{staff.id}</td>
+                        </tr>
+                        <tr>
+                          <th>スタッフ名：</th>
+                          <td>{staff.name}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </>
                 ) : "ログインしていません"}
               </PopoverBody>
             </PopoverContent>
           </Popover>
-
           {/* メニュー */}
           {staff && (
             <>
@@ -108,38 +116,19 @@ export default function Header() {
                   メニュー <ChevronDownIcon />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem icon={<TimeIcon />} onClick={() => router.replace('/form')}>
+                  <MenuItem icon={<TimeIcon fontSize="20" />} onClick={() => router.replace('/form')}>
                     勤怠入力
                   </MenuItem>
-                  <MenuItem icon={<ViewIcon />}  onClick={() => router.replace('/log')}>
+                  <MenuItem icon={<ViewIcon fontSize="20" />} onClick={() => router.replace('/log')}>
                     勤怠履歴確認
                   </MenuItem>
-                  <MenuItem icon={<ArrowBackIcon />} onClick={handleLogout}>
+                  <MenuItem icon={<BiLogOut fontSize="20" />} onClick={handleLogout}>
                     ログアウト
                   </MenuItem>
                 </MenuList>
               </Menu>
-
-              {/* ドロワー */}
-              {/* <Button ref={btnRef} p={0} bg={"inherit"} onClick={onOpen}>
-                <HamburgerIcon w={8} h={8} />
-              </Button>
-              <Drawer
-                isOpen={isOpen}
-                placement='right'
-                onClose={onClose}
-                finalFocusRef={btnRef}
-              >
-                <DrawerOverlay />
-                <DrawerContent>
-                  <DrawerHeader borderBottomWidth='1px'>佐藤 太郎さん</DrawerHeader>
-                  <DrawerBody>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer> */}
             </>
           )}
-
         </div>
       </header>
     </>

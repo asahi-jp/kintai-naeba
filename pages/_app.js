@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <GlobalState.Provider value={value}>
       <ChakraProvider>
-        <Header></Header>
+        <Header />
         <Component {...pageProps} />
       </ChakraProvider>
     </GlobalState.Provider>
