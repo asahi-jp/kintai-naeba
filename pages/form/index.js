@@ -120,7 +120,7 @@ export default function Form() {
               <FormLabel htmlFor="作業日" fontWeight="bold" color="gray.600" m="0" display="flex" gap="1">
                 作業日<Text fontSize="sm" color="red.400">*</Text>
               </FormLabel>
-              <Tooltip label='作業を行った日を選択してください' fontSize='md'>
+              <Tooltip label='作業を行った日を選択してください' fontSize='md' placement='top-start'>
                 <QuestionOutlineIcon />
               </Tooltip>
             </Box>
