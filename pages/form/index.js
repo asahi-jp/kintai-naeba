@@ -23,7 +23,11 @@ import {
   Radio,
   Switch,
   Textarea,
-  Button
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverBody
 } from '@chakra-ui/react';
 import { useForm, Controller } from "react-hook-form";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
@@ -138,11 +142,18 @@ export default function Form() {
 
           {/* レッスン */}
           <FormControl isInvalid={errors["レッスン"]}>
-            <Box display="flex" alignItems="center" gap="2">
+            <Box display="flex" alignItems="center" gap="1" pb="1">
               <FormLabel htmlFor="レッスン" fontWeight="bold" color="gray.600" m="0">レッスン</FormLabel>
-              <Tooltip label='該当する方は選択してください' aria-label='A tooltip' fontSize='md'>
-                <QuestionOutlineIcon />
-              </Tooltip>
+              <Popover placement='right-start'>
+                <PopoverTrigger>
+                  <Button p="0" bg="white" _hover={{ bg: "whtie" }} _focus={{ bg: "whtie" }} _active={{ bg: "whtie" }}>
+                    <QuestionOutlineIcon />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent bg="gray.700" borderRadius="0" border="none" boxShadow="none" width="auto">
+                  <PopoverBody fontSize="sm" color="gray.100" p="1">該当する方は選択してください</PopoverBody>
+                </PopoverContent>
+              </Popover>
             </Box>
             {/* <FormHelperText pb="2" color="gray.500" fontSize="xs">該当する方は選択してください</FormHelperText> */}
             <Select 
