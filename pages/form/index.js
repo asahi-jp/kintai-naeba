@@ -227,6 +227,8 @@ export default function Form() {
                     <Radio {...field} value=''>0</Radio>
                     <Radio {...field} value='0.5'>0.5</Radio>
                     <Radio {...field} value='1'>1</Radio>
+                    <Radio {...field} value='1.5'>1.5</Radio>
+                    <Radio {...field} value='2'>2</Radio>
                   </Stack>
                 </RadioGroup>
               )}
